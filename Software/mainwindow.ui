@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>805</width>
+    <height>830</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>8086Simulator</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Images.qrc">
+    <normaloff>:/icons/images/icons/CPU.ico</normaloff>:/icons/images/icons/CPU.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout"/>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>805</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menufile">
+    <property name="title">
+     <string>file</string>
+    </property>
+    <widget class="QMenu" name="menunew">
+     <property name="title">
+      <string>new</string>
+     </property>
+     <addaction name="actioncom_template"/>
+     <addaction name="actionexe_template"/>
+    </widget>
+    <widget class="QMenu" name="menuexamples">
+     <property name="title">
+      <string>examples</string>
+     </property>
+     <addaction name="actionmore_examples"/>
+    </widget>
+    <widget class="QMenu" name="menurecent_files">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="title">
+      <string>recent files</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menunew"/>
+    <addaction name="separator"/>
+    <addaction name="menuexamples"/>
+    <addaction name="separator"/>
+    <addaction name="actionopen"/>
+    <addaction name="separator"/>
+    <addaction name="actionsave"/>
+    <addaction name="actionsave_as"/>
+    <addaction name="separator"/>
+    <addaction name="menurecent_files"/>
+    <addaction name="separator"/>
+    <addaction name="actionexit"/>
+   </widget>
+   <widget class="QMenu" name="menuedit">
+    <property name="title">
+     <string>edit</string>
+    </property>
+    <widget class="QMenu" name="menuadvanced">
+     <property name="title">
+      <string>advanced</string>
+     </property>
+     <addaction name="actionshow_line_number"/>
+     <addaction name="separator"/>
+     <addaction name="actionlowercase_selection"/>
+     <addaction name="actionuppercase_selection"/>
+     <addaction name="separator"/>
+     <addaction name="actiondisplay_whitespace"/>
+    </widget>
+    <addaction name="actionundo"/>
+    <addaction name="actionredo"/>
+    <addaction name="separator"/>
+    <addaction name="actioncut"/>
+    <addaction name="actioncopy"/>
+    <addaction name="actionpaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionselect_all"/>
+    <addaction name="separator"/>
+    <addaction name="actionfind"/>
+    <addaction name="actionfind_next"/>
+    <addaction name="actionreplace"/>
+    <addaction name="separator"/>
+    <addaction name="actiongo_to_line"/>
+    <addaction name="separator"/>
+    <addaction name="actioncomment_block"/>
+    <addaction name="actionuncomment_block"/>
+    <addaction name="separator"/>
+    <addaction name="menuadvanced"/>
+   </widget>
+   <widget class="QMenu" name="menuemulator">
+    <property name="title">
+     <string>emulator</string>
+    </property>
+    <addaction name="actionshow_emulator"/>
+    <addaction name="actionassemble_and_load_in_emulator"/>
+   </widget>
+   <widget class="QMenu" name="menuassembler">
+    <property name="title">
+     <string>assembler</string>
+    </property>
+    <addaction name="actioncomplie"/>
+    <addaction name="actioncompile_and_load_in_emulator"/>
+    <addaction name="actionfasm"/>
+   </widget>
+   <widget class="QMenu" name="menumath">
+    <property name="title">
+     <string>math</string>
+    </property>
+    <addaction name="actionbase_convertor"/>
+    <addaction name="actionASCII_codes"/>
+   </widget>
+   <widget class="QMenu" name="menuhelp">
+    <property name="title">
+     <string>help</string>
+    </property>
+   </widget>
+   <addaction name="menufile"/>
+   <addaction name="menuedit"/>
+   <addaction name="menuassembler"/>
+   <addaction name="menuemulator"/>
+   <addaction name="menumath"/>
+   <addaction name="menuhelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+   <addaction name="actionnew"/>
+   <addaction name="actionopen_2"/>
+   <addaction name="actionsave_2"/>
+   <addaction name="actionsave_as_2"/>
+   <addaction name="separator"/>
+   <addaction name="actioncompile"/>
+   <addaction name="actionemulator"/>
+   <addaction name="separator"/>
+   <addaction name="actionconvertor"/>
+   <addaction name="separator"/>
+   <addaction name="actionoptions"/>
+  </widget>
+  <action name="actionexe_template">
+   <property name="text">
+    <string>exe template</string>
+   </property>
+  </action>
+  <action name="actionmore_examples">
+   <property name="text">
+    <string>more examples</string>
+   </property>
+  </action>
+  <action name="actionopen">
+   <property name="text">
+    <string>open...</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionsave_as">
+   <property name="text">
+    <string>save as ....</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="text">
+    <string>exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionundo">
+   <property name="text">
+    <string>undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionredo">
+   <property name="text">
+    <string>redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actioncut">
+   <property name="text">
+    <string>cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actioncopy">
+   <property name="text">
+    <string>copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionpaste">
+   <property name="text">
+    <string>paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionselect_all">
+   <property name="text">
+    <string>select all</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionfind">
+   <property name="text">
+    <string>find</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionfind_next">
+   <property name="text">
+    <string>find next</string>
+   </property>
+  </action>
+  <action name="actionreplace">
+   <property name="text">
+    <string>replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actiongo_to_line">
+   <property name="text">
+    <string>go to line...</string>
+   </property>
+  </action>
+  <action name="actioncomment_block">
+   <property name="text">
+    <string>comment block</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+;</string>
+   </property>
+  </action>
+  <action name="actionuncomment_block">
+   <property name="text">
+    <string>uncomment block</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+;</string>
+   </property>
+  </action>
+  <action name="actionshow_line_number">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>show line number</string>
+   </property>
+  </action>
+  <action name="actionlowercase_selection">
+   <property name="text">
+    <string>lowercase selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionuppercase_selection">
+   <property name="text">
+    <string>uppercase selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actiondisplay_whitespace">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>display whitespace</string>
+   </property>
+  </action>
+  <action name="actioncomplie">
+   <property name="text">
+    <string>compile</string>
+   </property>
+  </action>
+  <action name="actioncompile_and_load_in_emulator">
+   <property name="text">
+    <string>compile and load in emulator</string>
+   </property>
+  </action>
+  <action name="actionfasm">
+   <property name="text">
+    <string>fasm</string>
+   </property>
+  </action>
+  <action name="actionshow_emulator">
+   <property name="text">
+    <string>show emulator</string>
+   </property>
+  </action>
+  <action name="actionassemble_and_load_in_emulator">
+   <property name="text">
+    <string>assemble and load in emulator</string>
+   </property>
+  </action>
+  <action name="actionbase_convertor">
+   <property name="text">
+    <string>base convertor</string>
+   </property>
+  </action>
+  <action name="actioncom_template">
+   <property name="text">
+    <string>com template</string>
+   </property>
+  </action>
+  <action name="actionnew">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/file.ico</normaloff>:/icons/images/icons/file.ico</iconset>
+   </property>
+   <property name="text">
+    <string>new</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionopen_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/open.ico</normaloff>:/icons/images/icons/open.ico</iconset>
+   </property>
+   <property name="text">
+    <string>open</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+  </action>
+  <action name="actionsave_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/save.ico</normaloff>:/icons/images/icons/save.ico</iconset>
+   </property>
+   <property name="text">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="actionsave_as_2">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/save.ico</normaloff>:/icons/images/icons/save.ico</iconset>
+   </property>
+   <property name="text">
+    <string>save as</string>
+   </property>
+  </action>
+  <action name="actioncompile">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/compile.ico</normaloff>:/icons/images/icons/compile.ico</iconset>
+   </property>
+   <property name="text">
+    <string>compile</string>
+   </property>
+  </action>
+  <action name="actionemulator">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/emulator.ico</normaloff>:/icons/images/icons/emulator.ico</iconset>
+   </property>
+   <property name="text">
+    <string>emulator</string>
+   </property>
+  </action>
+  <action name="actionconvertor">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/convertor.ico</normaloff>:/icons/images/icons/convertor.ico</iconset>
+   </property>
+   <property name="text">
+    <string>convertor</string>
+   </property>
+  </action>
+  <action name="actionoptions">
+   <property name="icon">
+    <iconset resource="Images.qrc">
+     <normaloff>:/icons/images/icons/options.ico</normaloff>:/icons/images/icons/options.ico</iconset>
+   </property>
+   <property name="text">
+    <string>options</string>
+   </property>
+  </action>
+  <action name="actionASCII_codes">
+   <property name="text">
+    <string>ASCII codes</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
+ <connections/>
+</ui>

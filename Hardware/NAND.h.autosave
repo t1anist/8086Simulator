@@ -1,0 +1,21 @@
+#ifndef NAND_H
+#define NAND_H
+#include "hardwares.h"
+
+class NAND : public Hardwares
+{
+public:
+    Q_OBJECT
+    const int LG_START = 200;
+    Voltage pins[LGATE_PIN_NUM];
+    Counter<NAND> c;
+
+public:
+    NAND(QString nandName=nullptr);
+    void setPinVoltage(MicroCom::Pins pin, Voltage value);
+    Voltage getPinVoltage(MicroCom::Pins pin);
+    void handlePinVolChanges(MicroCom::Pins pin, Voltage value);
+    static int howMany(){return Counter<NAND>::howMany();}
+};
+
+#endif // NAND_H

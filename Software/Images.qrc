@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>images/icons/book.ico</file>
+        <file>images/icons/CPU.ico</file>
+        <file>images/icons/file.ico</file>
+        <file>images/icons/recent.ico</file>
+        <file>images/icons/STAR.ico</file>
+        <file>images/icons/open.ico</file>
+        <file>images/icons/save.ico</file>
+        <file>images/icons/compile.ico</file>
+        <file>images/icons/emulator.ico</file>
+        <file>images/icons/Calculator.ico</file>
+        <file>images/icons/convertor.ico</file>
+        <file>images/icons/options.ico</file>
+    </qresource>
+</RCC>
